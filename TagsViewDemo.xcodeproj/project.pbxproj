@@ -16,7 +16,7 @@
 		ADEBE41222EF6B5800AD510D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADEBE41122EF6B5800AD510D /* Assets.xcassets */; };
 		ADEBE41522EF6B5800AD510D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADEBE41322EF6B5800AD510D /* LaunchScreen.storyboard */; };
 		ADEBE41E22EF6D2700AD510D /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEBE41D22EF6D2700AD510D /* TagListView.swift */; };
-		ADEBE42022EF6D6500AD510D /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEBE41F22EF6D6500AD510D /* TagView.swift */; };
+		ADEBE42022EF6D6500AD510D /* TagButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEBE41F22EF6D6500AD510D /* TagButton.swift */; };
 		ADEBE42222EF72AF00AD510D /* TagsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEBE42122EF72AF00AD510D /* TagsCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,7 +33,7 @@
 		ADEBE41422EF6B5800AD510D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ADEBE41622EF6B5800AD510D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADEBE41D22EF6D2700AD510D /* TagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
-		ADEBE41F22EF6D6500AD510D /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
+		ADEBE41F22EF6D6500AD510D /* TagButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagButton.swift; sourceTree = "<group>"; };
 		ADEBE42122EF72AF00AD510D /* TagsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,7 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				ADEBE41D22EF6D2700AD510D /* TagListView.swift */,
-				ADEBE41F22EF6D6500AD510D /* TagView.swift */,
+				ADEBE41F22EF6D6500AD510D /* TagButton.swift */,
 				AD2F524222EF912E00076B70 /* Tag.swift */,
 			);
 			path = TagListView;
@@ -186,7 +186,7 @@
 				ADEBE42222EF72AF00AD510D /* TagsCell.swift in Sources */,
 				AD2F524622EF946300076B70 /* Item.swift in Sources */,
 				ADEBE40B22EF6B5600AD510D /* AppDelegate.swift in Sources */,
-				ADEBE42022EF6D6500AD510D /* TagView.swift in Sources */,
+				ADEBE42022EF6D6500AD510D /* TagButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

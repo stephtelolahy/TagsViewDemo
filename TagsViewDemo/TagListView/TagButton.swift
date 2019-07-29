@@ -1,5 +1,5 @@
 //
-//  TagView.swift
+//  TagButton.swift
 //  TagsViewDemo
 //
 //  Created by Hugues Stéphano TELOLAHY on 7/29/19.
@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class TagView: UIButton {
+class TagButton: UIButton {
     
     // MARK: - Properties
     

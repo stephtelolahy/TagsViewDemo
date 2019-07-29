@@ -113,7 +113,7 @@ class TagListView: UIView {
     
     // MARK: Private implementation
     
-    private(set) var tagViews: [TagView] = []
+    private(set) var tagViews: [TagButton] = []
     private(set) var rowViews: [UIView] = []
     private(set) var tagViewHeight: CGFloat = 0
     private(set) var rows = 0
@@ -175,8 +175,8 @@ class TagListView: UIView {
         invalidateIntrinsicContentSize()
     }
     
-    private func createNewTagView(_ tag: Tag) -> TagView {
-        let tagView = TagView(tag: tag)
+    private func createNewTagView(_ tag: Tag) -> TagButton {
+        let tagView = TagButton(tag: tag)
         
         tagView.textColor = tagTextColor
         tagView.tagBackgroundColor = tagBackgroundColor
