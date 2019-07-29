@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD2F524322EF912E00076B70 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2F524222EF912E00076B70 /* Tag.swift */; };
 		ADEBE40B22EF6B5600AD510D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEBE40A22EF6B5600AD510D /* AppDelegate.swift */; };
 		ADEBE40D22EF6B5600AD510D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEBE40C22EF6B5600AD510D /* ViewController.swift */; };
 		ADEBE41022EF6B5600AD510D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADEBE40E22EF6B5600AD510D /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD2F524222EF912E00076B70 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		ADEBE40722EF6B5600AD510D /* TagsViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TagsViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADEBE40A22EF6B5600AD510D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADEBE40C22EF6B5600AD510D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			children = (
 				ADEBE41D22EF6D2700AD510D /* TagListView.swift */,
 				ADEBE41F22EF6D6500AD510D /* TagView.swift */,
+				AD2F524222EF912E00076B70 /* Tag.swift */,
 			);
 			path = TagListView;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD2F524322EF912E00076B70 /* Tag.swift in Sources */,
 				ADEBE40D22EF6B5600AD510D /* ViewController.swift in Sources */,
 				ADEBE41E22EF6D2700AD510D /* TagListView.swift in Sources */,
 				ADEBE42222EF72AF00AD510D /* TagsCell.swift in Sources */,

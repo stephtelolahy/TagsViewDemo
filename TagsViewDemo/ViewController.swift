@@ -22,12 +22,12 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TagsCell", for: indexPath) as! TagsCell
         cell.update(with: "Les bonnes affaires",
-                    tags: ["Soldes",
-                           "Les bons plans",
-                           "Exclusivités internet",
-                           "Nouveautés",
-                           "moins de 1100 t/min de 1100 t/min à 1300 t/min plus de 1300 t/min",
-                           "Pack économiques"])
+                    tags: [Tag(title: "Soldes", selected: false),
+                           Tag(title: "Les bons plans", selected: false),
+                           Tag(title: "Exclusivités internet", selected: false),
+                           Tag(title: "Nouveautés", selected: true),
+                           Tag(title: "moins de 1100 t/min de 1100 t/min à 1300 t/min plus de 1300 t/min", selected: false),
+                           Tag(title: "Pack économiques", selected: false)])
         return cell
     }
 }

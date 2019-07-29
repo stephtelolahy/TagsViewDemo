@@ -13,10 +13,9 @@ class TagsCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var tagListView: TagListView!
     
-    func update(with title: String, tags: [String]) {
+    func update(with title: String, tags: [Tag]) {
         nameLabel.text = title
-        tagListView.removeAllTags()
-        tagListView.addTags(tags)
+        tagListView.setTags(tags)
     }
 
 }

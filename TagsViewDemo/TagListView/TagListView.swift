@@ -13,7 +13,7 @@ class TagListView: UIView {
     
     // MARK: Properties
     
-    open var tagTextColor: UIColor = .black {
+    var tagTextColor: UIColor = .black {
         didSet {
             for tagView in tagViews {
                 tagView.textColor = tagTextColor
@@ -21,7 +21,7 @@ class TagListView: UIView {
         }
     }
     
-    open var tagTextFont: UIFont = UIFont.systemFont(ofSize: 12) {
+    var tagTextFont: UIFont = UIFont.systemFont(ofSize: 12) {
         didSet {
             for tagView in tagViews {
                 tagView.textFont = tagTextFont
@@ -30,7 +30,7 @@ class TagListView: UIView {
         }
     }
     
-    open var tagLineBreakMode: NSLineBreakMode = .byTruncatingMiddle {
+    var tagLineBreakMode: NSLineBreakMode = .byTruncatingMiddle {
         didSet {
             for tagView in tagViews {
                 tagView.titleLineBreakMode = tagLineBreakMode
@@ -38,7 +38,7 @@ class TagListView: UIView {
         }
     }
     
-    open var tagBackgroundColor: UIColor = .clear {
+    var tagBackgroundColor: UIColor = .clear {
         didSet {
             for tagView in tagViews {
                 tagView.tagBackgroundColor = tagBackgroundColor
@@ -46,7 +46,7 @@ class TagListView: UIView {
         }
     }
     
-    open var tagCornerRadius: CGFloat = 16 {
+    var tagCornerRadius: CGFloat = 16 {
         didSet {
             for tagView in tagViews {
                 tagView.cornerRadius = tagCornerRadius
@@ -54,7 +54,7 @@ class TagListView: UIView {
         }
     }
     
-    open var tagBorderWidth: CGFloat = 1 {
+    var tagBorderWidth: CGFloat = 1 {
         didSet {
             for tagView in tagViews {
                 tagView.borderWidth = tagBorderWidth
@@ -62,7 +62,7 @@ class TagListView: UIView {
         }
     }
     
-    open var tagBorderColor: UIColor = .lightGray {
+    var tagBorderColor: UIColor = .lightGray {
         didSet {
             for tagView in tagViews {
                 tagView.borderColor = tagBorderColor
@@ -70,7 +70,7 @@ class TagListView: UIView {
         }
     }
     
-    open var paddingY: CGFloat = 15 {
+    var paddingY: CGFloat = 15 {
         didSet {
             for tagView in tagViews {
                 tagView.paddingY = paddingY
@@ -79,7 +79,7 @@ class TagListView: UIView {
         }
     }
     
-    open var paddingX: CGFloat = 12 {
+    var paddingX: CGFloat = 12 {
         didSet {
             for tagView in tagViews {
                 tagView.paddingX = paddingX
@@ -88,13 +88,13 @@ class TagListView: UIView {
         }
     }
     
-    open var marginY: CGFloat = 5 {
+    var marginY: CGFloat = 5 {
         didSet {
             rearrangeViews()
         }
     }
     
-    open var marginX: CGFloat = 5 {
+    var marginX: CGFloat = 5 {
         didSet {
             rearrangeViews()
         }
@@ -102,11 +102,13 @@ class TagListView: UIView {
     
     // MARK: Interface Builder
     
-    open override func prepareForInterfaceBuilder() {
+    override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
-        addTag("This")
-        addTag("is")
-        addTag("TagListView")
+        setTags([
+            Tag(title: "This", selected: false),
+            Tag(title: "Is", selected: false),
+            Tag(title: "TagListView", selected: true)
+        ])
     }
     
     // MARK: Private implementation
@@ -173,8 +175,8 @@ class TagListView: UIView {
         invalidateIntrinsicContentSize()
     }
     
-    private func createNewTagView(_ title: String) -> TagView {
-        let tagView = TagView(title: title)
+    private func createNewTagView(_ tag: Tag) -> TagView {
+        let tagView = TagView(tag: tag)
         
         tagView.textColor = tagTextColor
         tagView.tagBackgroundColor = tagBackgroundColor
@@ -190,12 +192,12 @@ class TagListView: UIView {
     
     // MARK: Layout
     
-    open override func layoutSubviews() {
+    override func layoutSubviews() {
         super.layoutSubviews()
         rearrangeViews()
     }
     
-    override open var intrinsicContentSize: CGSize {
+    override var intrinsicContentSize: CGSize {
         var height = CGFloat(0)
         if rows > 0 {
             height =  CGFloat(rows) * (tagViewHeight + marginY) + marginY
@@ -203,29 +205,16 @@ class TagListView: UIView {
         return CGSize(width: frame.width, height: height)
     }
     
-    // MARK: Public interface
+    // MARK: Interface
     
-    open func addTags(_ titles: [String]) {
-        var tagViews: [TagView] = []
-        for title in titles {
-            tagViews.append(createNewTagView(title))
-        }
-        _ = addTagViews(tagViews)
-    }
-    
-    open func addTagViews(_ tagViews: [TagView]) -> [TagView] {
-        for tagView in tagViews {
-            self.tagViews.append(tagView)
-        }
-        rearrangeViews()
-        return tagViews
-    }
-    
-    open func removeAllTags() {
+    func setTags(_ tags: [Tag]) {
         for view in tagViews {
             view.removeFromSuperview()
         }
         tagViews = []
+        for tag in tags {
+            tagViews.append(createNewTagView(tag))
+        }
         rearrangeViews()
     }
 }

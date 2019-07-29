@@ -9,61 +9,61 @@
 import UIKit
 
 @IBDesignable
-open class TagView: UIButton {
+class TagView: UIButton {
     
     // MARK: - Properties
     
-    open var cornerRadius: CGFloat = 0 {
+    var cornerRadius: CGFloat = 0 {
         didSet {
             layer.cornerRadius = cornerRadius
             layer.masksToBounds = cornerRadius > 0
         }
     }
     
-    open var borderWidth: CGFloat = 0 {
+    var borderWidth: CGFloat = 0 {
         didSet {
             layer.borderWidth = borderWidth
         }
     }
     
-    open var borderColor: UIColor = .lightGray {
+    var borderColor: UIColor = .lightGray {
         didSet {
             reloadStyles()
         }
     }
     
-    open var tagBackgroundColor: UIColor = .clear {
+    var tagBackgroundColor: UIColor = .clear {
         didSet {
             reloadStyles()
         }
     }
     
-    open var textColor: UIColor = .black {
+    var textColor: UIColor = .black {
         didSet {
             reloadStyles()
         }
     }
     
-    open var textFont: UIFont = UIFont.systemFont(ofSize: 12) {
+    var textFont: UIFont = UIFont.systemFont(ofSize: 12) {
         didSet {
             titleLabel?.font = textFont
         }
     }
     
-    open var titleLineBreakMode: NSLineBreakMode = .byTruncatingMiddle {
+    var titleLineBreakMode: NSLineBreakMode = .byTruncatingMiddle {
         didSet {
             titleLabel?.lineBreakMode = titleLineBreakMode
         }
     }
     
-    open var paddingY: CGFloat  = 0 {
+    var paddingY: CGFloat  = 0 {
         didSet {
             titleEdgeInsets.top = paddingY
             titleEdgeInsets.bottom = paddingY
         }
     }
     
-    open var paddingX: CGFloat = 0 {
+    var paddingX: CGFloat = 0 {
         didSet {
             titleEdgeInsets.left = paddingX
             titleEdgeInsets.right = paddingX
@@ -78,13 +78,14 @@ open class TagView: UIButton {
     
     // MARK: - init
     
-    public init(title: String) {
+    init(tag: Tag) {
         super.init(frame: CGRect.zero)
-        setTitle(title, for: UIControl.State())
+        setTitle(tag.title, for: UIControl.State())
+        isSelected = tag.selected
         setupView()
     }
     
-    required public init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -95,7 +96,7 @@ open class TagView: UIButton {
     
     // MARK: - Interface builder
     
-    override open var intrinsicContentSize: CGSize {
+    override var intrinsicContentSize: CGSize {
         var size = titleLabel?.text?.size(withAttributes: [NSAttributedString.Key.font: textFont]) ?? CGSize.zero
         size.height = textFont.pointSize + paddingY * 2
         size.width += paddingX * 2
