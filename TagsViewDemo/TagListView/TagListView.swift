@@ -70,7 +70,7 @@ class TagListView: UIView {
         }
     }
     
-    var paddingY: CGFloat = 15 {
+    var paddingY: CGFloat = 10 {
         didSet {
             for tagView in tagViews {
                 tagView.paddingY = paddingY
@@ -79,7 +79,7 @@ class TagListView: UIView {
         }
     }
     
-    var paddingX: CGFloat = 12 {
+    var paddingX: CGFloat = 16 {
         didSet {
             for tagView in tagViews {
                 tagView.paddingX = paddingX
