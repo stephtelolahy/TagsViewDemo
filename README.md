@@ -4,7 +4,10 @@
 - [x] Intrinsict content size
 - [x] Maximum width + truncate middle
 - [x] Minimum width
-- [ ] Selected state + toggle
-- [ ] set maximum rowsCount + isCollapsed: Bool
-- [ ] Autolayout  withing an UItableViewCell
+- [x] Selected state
+- [x] Toggle state
+- [ ] set maximum rowsCount 
+- [ ] isCollapsed state
+- [ ] replace margin with spacing
+- [ ] Autolayout  within an UITableViewCell
 

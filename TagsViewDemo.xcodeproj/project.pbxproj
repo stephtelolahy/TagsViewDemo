@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AD2F524322EF912E00076B70 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2F524222EF912E00076B70 /* Tag.swift */; };
 		AD2F524622EF946300076B70 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2F524522EF946300076B70 /* Item.swift */; };
+		AD9B708122EF9C0C0063959A /* UIcolorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9B708022EF9C0C0063959A /* UIcolorExtension.swift */; };
 		ADEBE40B22EF6B5600AD510D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEBE40A22EF6B5600AD510D /* AppDelegate.swift */; };
 		ADEBE40D22EF6B5600AD510D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEBE40C22EF6B5600AD510D /* ViewController.swift */; };
 		ADEBE41022EF6B5600AD510D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADEBE40E22EF6B5600AD510D /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 		AD2F524222EF912E00076B70 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		AD2F524522EF946300076B70 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		AD9B707A22EF95C50063959A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AD9B708022EF9C0C0063959A /* UIcolorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIcolorExtension.swift; sourceTree = "<group>"; };
 		ADEBE40722EF6B5600AD510D /* TagsViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TagsViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADEBE40A22EF6B5600AD510D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADEBE40C22EF6B5600AD510D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +57,14 @@
 			path = TagCell;
 			sourceTree = "<group>";
 		};
+		AD9B707F22EF9BF90063959A /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				AD9B708022EF9C0C0063959A /* UIcolorExtension.swift */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
 		ADEBE3FE22EF6B5600AD510D = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +89,7 @@
 				ADEBE40C22EF6B5600AD510D /* ViewController.swift */,
 				AD2F524422EF945200076B70 /* TagCell */,
 				ADEBE41C22EF6D1800AD510D /* TagListView */,
+				AD9B707F22EF9BF90063959A /* Misc */,
 				ADEBE40E22EF6B5600AD510D /* Main.storyboard */,
 				ADEBE41122EF6B5800AD510D /* Assets.xcassets */,
 				ADEBE41322EF6B5800AD510D /* LaunchScreen.storyboard */,
@@ -171,6 +182,7 @@
 				AD2F524322EF912E00076B70 /* Tag.swift in Sources */,
 				ADEBE40D22EF6B5600AD510D /* ViewController.swift in Sources */,
 				ADEBE41E22EF6D2700AD510D /* TagListView.swift in Sources */,
+				AD9B708122EF9C0C0063959A /* UIcolorExtension.swift in Sources */,
 				ADEBE42222EF72AF00AD510D /* TagsCell.swift in Sources */,
 				AD2F524622EF946300076B70 /* Item.swift in Sources */,
 				ADEBE40B22EF6B5600AD510D /* AppDelegate.swift in Sources */,

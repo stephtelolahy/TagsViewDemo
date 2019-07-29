@@ -80,9 +80,9 @@ class TagView: UIButton {
     
     init(tag: Tag) {
         super.init(frame: CGRect.zero)
+        setupView()
         setTitle(tag.title, for: UIControl.State())
         isSelected = tag.selected
-        setupView()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -92,6 +92,12 @@ class TagView: UIButton {
     private func setupView() {
         titleLabel?.lineBreakMode = titleLineBreakMode
         frame.size = intrinsicContentSize
+        setTitleColor(textColor, for: .normal)
+        setTitleColor(.white, for: .selected)
+        setBackgroundImage(UIImage.create(color: .clear), for: .normal)
+        setBackgroundImage(UIImage.create(color: .lightGray), for: .selected)
+        addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        
     }
     
     // MARK: - Interface builder
@@ -104,5 +110,11 @@ class TagView: UIButton {
             size.width = size.height
         }
         return size
+    }
+    
+    // MARK: Target action
+    
+    @objc func buttonAction(sender: UIButton!) {
+        isSelected.toggle()
     }
 }

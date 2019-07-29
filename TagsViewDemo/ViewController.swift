@@ -17,8 +17,8 @@ class ViewController: UIViewController {
                     Tag(title: "Exclusivités internet", selected: false),
                     Tag(title: "Nouveautés", selected: true),
                     Tag(title: "Pack économiques", selected: false)]),
-        Item(title: "Vitesses d’essorages",
-             tags: [Tag(title: "moins de 1100 t/min de 1100 t/min à 1300 t/min plus de 1300 t/min", selected: false),
+        Item(title: "Lorem Ipsum",
+             tags: [Tag(title: "Quare hoc quidem praeceptum, cuiuscumque est, ad tollendam amicitiam valet", selected: false),
                     Tag(title: "i", selected: false)])
     ]
 }

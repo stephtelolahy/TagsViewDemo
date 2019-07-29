@@ -88,13 +88,13 @@ class TagListView: UIView {
         }
     }
     
-    var marginY: CGFloat = 5 {
+    var marginY: CGFloat = 12 {
         didSet {
             rearrangeViews()
         }
     }
     
-    var marginX: CGFloat = 5 {
+    var marginX: CGFloat = 12 {
         didSet {
             rearrangeViews()
         }
