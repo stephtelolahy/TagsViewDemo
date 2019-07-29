@@ -6,8 +6,9 @@
 - [x] Minimum width
 - [x] Selected state
 - [x] Toggle state
-- [ ] set maximum rowsCount 
-- [ ] isCollapsed state
+- [x] Autolayout  within an UITableViewCell
 - [ ] replace margin with spacing
-- [ ] Autolayout  within an UITableViewCell
-
+- [ ] property rowsCount
+- [ ] property isCollapsed
+- [ ] Delegate didToggleTagAt(index)
+- [ ] Fully customizable via Interface builder

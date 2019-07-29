@@ -140,7 +140,7 @@ class TagListView: UIView {
             
             var size = view.intrinsicContentSize
             
-            if currentRowTagCount == 0 || (currentRowWidth + size.width + 2 * marginX) > frame.width {
+            if currentRowTagCount == 0 || (currentRowWidth + size.width + 2 * marginX) > bounds.width {
                 currentRow += 1
                 currentRowWidth = 0
                 currentRowTagCount = 0
@@ -151,11 +151,11 @@ class TagListView: UIView {
                 rowViews.append(currentRowView)
                 addSubview(currentRowView)
                 
-                size.width = min(size.width, frame.width - 2 * marginX)
+                size.width = min(size.width, bounds.width - 2 * marginX)
             }
             
             if view is UITextField {
-                size.width = max(size.width, frame.width - 2 * marginX - currentRowWidth)
+                size.width = max(size.width, bounds.width - 2 * marginX - currentRowWidth)
             }
             
             view.frame.size = size
@@ -165,7 +165,7 @@ class TagListView: UIView {
             currentRowView.addSubview(view)
             
             currentRowTagCount += 1
-            currentRowWidth += view.frame.width + marginX
+            currentRowWidth += view.bounds.width + marginX
             
             currentRowView.frame.size.width = currentRowWidth
             currentRowView.frame.size.height = max(tagViewHeight, currentRowView.frame.height)
@@ -202,7 +202,7 @@ class TagListView: UIView {
         if rows > 0 {
             height =  CGFloat(rows) * (tagViewHeight + marginY) + marginY
         }
-        return CGSize(width: frame.width, height: height)
+        return CGSize(width: bounds.width, height: height)
     }
     
     // MARK: Interface
