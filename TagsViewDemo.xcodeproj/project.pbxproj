@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AD2F524322EF912E00076B70 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2F524222EF912E00076B70 /* Tag.swift */; };
+		AD2F524622EF946300076B70 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2F524522EF946300076B70 /* Item.swift */; };
 		ADEBE40B22EF6B5600AD510D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEBE40A22EF6B5600AD510D /* AppDelegate.swift */; };
 		ADEBE40D22EF6B5600AD510D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEBE40C22EF6B5600AD510D /* ViewController.swift */; };
 		ADEBE41022EF6B5600AD510D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADEBE40E22EF6B5600AD510D /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		AD2F524222EF912E00076B70 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		AD2F524522EF946300076B70 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		ADEBE40722EF6B5600AD510D /* TagsViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TagsViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADEBE40A22EF6B5600AD510D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADEBE40C22EF6B5600AD510D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +45,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD2F524422EF945200076B70 /* TagCell */ = {
+			isa = PBXGroup;
+			children = (
+				ADEBE42122EF72AF00AD510D /* TagsCell.swift */,
+				AD2F524522EF946300076B70 /* Item.swift */,
+			);
+			path = TagCell;
+			sourceTree = "<group>";
+		};
 		ADEBE3FE22EF6B5600AD510D = {
 			isa = PBXGroup;
 			children = (
@@ -62,10 +73,10 @@
 		ADEBE40922EF6B5600AD510D /* TagsViewDemo */ = {
 			isa = PBXGroup;
 			children = (
-				ADEBE41C22EF6D1800AD510D /* TagListView */,
 				ADEBE40A22EF6B5600AD510D /* AppDelegate.swift */,
 				ADEBE40C22EF6B5600AD510D /* ViewController.swift */,
-				ADEBE42122EF72AF00AD510D /* TagsCell.swift */,
+				AD2F524422EF945200076B70 /* TagCell */,
+				ADEBE41C22EF6D1800AD510D /* TagListView */,
 				ADEBE40E22EF6B5600AD510D /* Main.storyboard */,
 				ADEBE41122EF6B5800AD510D /* Assets.xcassets */,
 				ADEBE41322EF6B5800AD510D /* LaunchScreen.storyboard */,
@@ -159,6 +170,7 @@
 				ADEBE40D22EF6B5600AD510D /* ViewController.swift in Sources */,
 				ADEBE41E22EF6D2700AD510D /* TagListView.swift in Sources */,
 				ADEBE42222EF72AF00AD510D /* TagsCell.swift in Sources */,
+				AD2F524622EF946300076B70 /* Item.swift in Sources */,
 				ADEBE40B22EF6B5600AD510D /* AppDelegate.swift in Sources */,
 				ADEBE42022EF6D6500AD510D /* TagView.swift in Sources */,
 			);
