@@ -94,6 +94,12 @@ class TagListView: UIView {
         }
     }
     
+    var maxRowsCount: Int = 0 {
+        didSet {
+            rearrangeViews()
+        }
+    }
+    
     // MARK: Interface Builder
     
     override func prepareForInterfaceBuilder() {
@@ -129,6 +135,11 @@ class TagListView: UIView {
             var size = view.intrinsicContentSize
             
             if currentRowTagsCount == 0 || (currentRowWidth + size.width + spacing) > bounds.width {
+                
+                if maxRowsCount > 0 && currentRow == maxRowsCount {
+                    break
+                }
+                
                 currentRow += 1
                 currentRowWidth = 0
                 currentRowTagsCount = 0
@@ -158,6 +169,8 @@ class TagListView: UIView {
             currentRowView.frame.size.width = currentRowWidth
             currentRowView.frame.size.height = max(tagViewHeight, currentRowView.frame.height)
         }
+        
+        
         rows = currentRow
         
         invalidateIntrinsicContentSize()

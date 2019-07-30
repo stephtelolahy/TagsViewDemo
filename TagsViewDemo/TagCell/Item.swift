@@ -9,4 +9,5 @@
 struct Item {
     let title: String
     let tags: [Tag]
+    var expanded: Bool
 }
