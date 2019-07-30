@@ -19,6 +19,14 @@ class ViewController: UIViewController {
                     Tag(title: "Pack économiques", selected: false)]),
         Item(title: "Lorem Ipsum",
              tags: [Tag(title: "Quare hoc quidem praeceptum, cuiuscumque est, ad tollendam amicitiam valet", selected: false),
+                    Tag(title: "a", selected: false),
+                    Tag(title: "b", selected: false),
+                    Tag(title: "c", selected: false),
+                    Tag(title: "d", selected: false),
+                    Tag(title: "e", selected: false),
+                    Tag(title: "f", selected: false),
+                    Tag(title: "g", selected: false),
+                    Tag(title: "h", selected: false),
                     Tag(title: "i", selected: false)])
     ]
 }

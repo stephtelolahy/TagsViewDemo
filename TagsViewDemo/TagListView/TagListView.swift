@@ -88,13 +88,7 @@ class TagListView: UIView {
         }
     }
     
-    var marginY: CGFloat = 12 {
-        didSet {
-            rearrangeViews()
-        }
-    }
-    
-    var marginX: CGFloat = 12 {
+    var spacing: CGFloat = 12 {
         didSet {
             rearrangeViews()
         }
@@ -108,7 +102,7 @@ class TagListView: UIView {
             Tag(title: "This", selected: false),
             Tag(title: "Is", selected: false),
             Tag(title: "TagListView", selected: true)
-        ])
+            ])
     }
     
     // MARK: Private implementation
@@ -119,8 +113,7 @@ class TagListView: UIView {
     private(set) var rows = 0
     
     private func rearrangeViews() {
-        
-        let views = tagViews as [UIView] + rowViews
+        let views: [UIView] = tagViews + rowViews
         for view in views {
             view.removeFromSuperview()
         }
@@ -128,44 +121,39 @@ class TagListView: UIView {
         
         var currentRow = 0
         var currentRowView: UIView!
-        var currentRowTagCount = 0
+        var currentRowTagsCount = 0
         var currentRowWidth: CGFloat = 0
         
-        var childViews: [UIView] = []
-        for tagView in tagViews {
-            childViews.append(tagView)
-        }
-        
-        for view in childViews {
+        for view in tagViews {
             
             var size = view.intrinsicContentSize
             
-            if currentRowTagCount == 0 || (currentRowWidth + size.width + 2 * marginX) > bounds.width {
+            if currentRowTagsCount == 0 || (currentRowWidth + size.width + spacing) > bounds.width {
                 currentRow += 1
                 currentRowWidth = 0
-                currentRowTagCount = 0
+                currentRowTagsCount = 0
                 currentRowView = UIView()
                 
-                currentRowView.frame.origin = CGPoint(x: marginX, y: marginY + CGFloat(currentRow - 1) * (tagViewHeight + marginY))
+                currentRowView.frame.origin = CGPoint(x: 0, y: 0 + CGFloat(currentRow - 1) * (tagViewHeight + spacing))
                 
                 rowViews.append(currentRowView)
                 addSubview(currentRowView)
                 
-                size.width = min(size.width, bounds.width - 2 * marginX)
-            }
-            
-            if view is UITextField {
-                size.width = max(size.width, bounds.width - 2 * marginX - currentRowWidth)
+                size.width = min(size.width, bounds.width)
             }
             
             view.frame.size = size
-            view.frame.origin = CGPoint(x: currentRowWidth, y: 0)
+            
+            let viewX = currentRowTagsCount == 0 ? currentRowWidth : (currentRowWidth + spacing)
+            view.frame.origin = CGPoint(x: viewX, y: 0)
             tagViewHeight = size.height
             
             currentRowView.addSubview(view)
             
-            currentRowTagCount += 1
-            currentRowWidth += view.bounds.width + marginX
+            let additionalRowWidth = currentRowTagsCount == 0 ? view.bounds.width : (view.bounds.width + spacing)
+            currentRowWidth += additionalRowWidth
+            
+            currentRowTagsCount += 1
             
             currentRowView.frame.size.width = currentRowWidth
             currentRowView.frame.size.height = max(tagViewHeight, currentRowView.frame.height)
@@ -200,7 +188,7 @@ class TagListView: UIView {
     override var intrinsicContentSize: CGSize {
         var height = CGFloat(0)
         if rows > 0 {
-            height =  CGFloat(rows) * (tagViewHeight + marginY) + marginY
+            height =  tagViewHeight * CGFloat(rows) + spacing * CGFloat(rows - 1)
         }
         return CGSize(width: bounds.width, height: height)
     }
@@ -211,10 +199,8 @@ class TagListView: UIView {
         for view in tagViews {
             view.removeFromSuperview()
         }
-        tagViews = []
-        for tag in tags {
-            tagViews.append(createNewTagView(tag))
-        }
+        
+        tagViews = tags.map { createNewTagView($0) }
         rearrangeViews()
     }
 }
